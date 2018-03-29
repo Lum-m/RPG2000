@@ -1,2 +1,5 @@
 # RPG2000
-A RPG demo for a school project.
+
+A multiplayer RPG.
+
+Un RPG multijoueur fait pour un projet d'ISN.
