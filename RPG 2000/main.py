@@ -1,4 +1,5 @@
 ## Demo de RPG multijoueur pour un projet d'ISN
+#sapristi saucisse
 import pygame
 from pygame.locals import*
 
