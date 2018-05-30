@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 #fichier de la boutique 
 #projet : RPG2000
 
@@ -23,7 +25,7 @@ fond = pygame.image.load("maps/shop/fond.png").convert()
 #la boutique se résume à 1 grande fonction que l'on peut appeller à loisir
 def shop(fenetre=pygame.display.set_mode((960,640))):
 
-
+	global pseudo
 	#affichage du message de bienvenue
 	fenetre.blit(forge, (0,0))
 	fenetre.blit(bvn, (42,465))
@@ -126,16 +128,41 @@ def shop(fenetre=pygame.display.set_mode((960,640))):
 						pygame.display.flip()
 					if pos == 2:
 						hauteur = 420
+						item = b"bois magique   40"
 						fenetre.blit(cur,(0,hauteur))
 						pygame.display.flip()
 					if pos == 1:
 						hauteur = 490
+						item = b"arme interdite 200"
 						fenetre.blit(cur,(0,hauteur))
 						pygame.display.flip()
 					if pos == 0:
 						hauteur = 590
 						fenetre.blit(cur,(0,hauteur))
 						pygame.display.flip()
+
+					if pos == 3:
+						item = b"arc courbe   "
+					if pos == 4:
+						item = b"arc double   "
+					if pos == 5:
+						item = b"arc elfic    "
+					if pos == 6:
+						item = b"hache double "
+					if pos == 7:
+						item = b"hallebarde   "
+					if pos == 8:
+						item = b"masse d'arme "
+					if pos == 9:
+						item = b"marteau lourd"
+					if pos == 10:
+						item = b"espadon lourd"
+					if pos == 11:
+						item = b"epee legere  "
+					if pos == 12:
+						item = b"dague        "
+
+
 					#si l'utilisateur appuie sur entree ou espace
 					#on passe à l'écran de confirmation
 					if event.key == K_RETURN or event.key == K_SPACE:
@@ -177,7 +204,11 @@ def shop(fenetre=pygame.display.set_mode((960,640))):
 					if event.key == K_RETURN or event.key == K_SPACE:
 						#paiement effectué
 						#monnaie = monnaie - prix
+						if cf == 'g' and pos != 0:
+							connexion_avec_serveur.send(b"shop "+pseudo+b": buy "+item)
+							confirmation = 0
 						if cf == 'g' and pos == 0:
+							confirmation = 0
 							shop = 0
 						if cf == 'r':
 							fenetre.blit(forge,(0,0))

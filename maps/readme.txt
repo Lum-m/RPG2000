@@ -27,7 +27,7 @@ les layers sont des couches d'images que l'ont peut afficher les
 unes sur les autres.
 
 il y a de definies dans la fonction load_map()
-deux listes d'�l�ments : 
+deux listes d'éléments : 
 les elements sur lesquels le joueur peut marcher: la liste tiles[]
 les elements sur lesquels le joueur ne peut marcher : la liste tiles_l2[]
 
@@ -52,7 +52,7 @@ ex:
 le generateur de map fonctionne de la facon suivante:
 
 il a besoin de connaitre le fichier contenant la map
-il a besoin de connaitre la liste d'images associ�e au fichier
+il a besoin de connaitre la liste d'images associée au fichier
 il a besoin d'une surface sur laquelle afficher la map
 car il ya deux listes d'images actuellement
 
